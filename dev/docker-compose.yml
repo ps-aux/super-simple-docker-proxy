@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  nginx:
+    image: "nginx:1.19.3"
+    ports:
+      - "9002:90"
+    environment:
+      NGINX_PORT: 90
+      NGINX_PROXY: https://storage.googleapis.com/public.boxyland.garwan.io/playground/simple-page.html
+    volumes:
+      - ..:/etc/nginx/templates
